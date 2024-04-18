@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        h2 {
+            text-align: center;
+            color: black;
+        }
+        form {
+            margin: auto;
+            width: min(600px, 80%);
+            padding: 20px;
+            border: 1px solid whitesmoke;
+            border-radius: 10px;
+           
+         
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+       .pass1 {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid beige;
+            border-radius: 5px;
+        }
+        .pass2 {
+            margin-right: 5px;
+        }
+        .btn-1 {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-1:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="/" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input class="pass1" type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input class="pass1" type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input class="pass1" type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input class="pass1" type="tel" >
+        </div>
+        <input class="pass2" type="checkbox" >
+        <label for="interest1">Check the information</label><br>
+        <div>
+            <button class="btn-1" type="submit">Register</button>
+        </div>
+    </form>
+</body>
+</html>

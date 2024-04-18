@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Methods Example</title>
+</head>
+<body>
+    <h1>JavaScript Array Methods Demonstration</h1>
+    <button onclick="demonstrateArrayMethods()">Run Array Methods</button>
+    <p id="output"></p>
+
+    <script>
+        function demonstrateArrayMethods() {
+            let output = document.getElementById('output');
+            let results = [];
+
+            // Starting array
+            let fruits = ["Apple", "Banana", "Cherry"];
+            results.push("Starting array: " + fruits.join(", "));
+
+            // push()
+            fruits.push("Dragonfruit");
+            results.push("After push(): " + fruits.join(", "));  // Adds "Dragonfruit" at the end
+
+            // pop()
+            fruits.pop();
+            results.push("After pop(): " + fruits.join(", "));   // Removes the last item
+
+            // shift()
+            fruits.shift();
+            results.push("After shift(): " + fruits.join(", ")); // Removes the first item
+
+            // unshift()  
+            fruits.unshift("Kiwi");
+            results.push("After unshift(): " + fruits.join(", ")); // Adds "Kiwi" at the start
+
+            // sort()
+            fruits.sort();
+            results.push("After sort(): " + fruits.join(", ")); // Sorts the array
+
+            // concat()
+            let moreFruits = ["Fig", "Grape"];
+            let combinedFruits = fruits.concat(moreFruits);
+            results.push("After concat(): " + combinedFruits.join(", ")); // Concatenates more fruits
+
+            // reverse()
+            combinedFruits.reverse();
+            results.push("After reverse(): " + combinedFruits.join(", ")); // Reverses the array
+
+            // Display results
+            output.innerHTML = results.join("<br>");
+        }
+    </script>
+</body>
+</html>

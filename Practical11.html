@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Color</title>
+</head>
+<body>
+    <h1>Dynamic Background Color Change</h1>
+    <script>
+        // Array of colors to cycle through
+        const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+        let currentIndex = 0;
+
+        function changeBackgroundColor() {
+            // Change the current background color
+            document.body.style.backgroundColor = colors[currentIndex];
+
+            // Update the index to the next color, wrap around if at the end of the array
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+
+        // Change the background color every 3 seconds
+        setInterval(changeBackgroundColor, 3000);
+    </script>
+</body>
+</html>

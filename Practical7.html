@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers Example</title>
+    <style>
+        #changeColor {
+            padding: 10px;
+            background-color: lightblue;
+        }
+        #mouseArea {
+            width: 200px;
+            height: 100px;
+            margin-top: 20px;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function pageLoaded() {
+            alert('Page is fully loaded.');
+        }
+        
+        function handleFocus(element) {
+            element.style.background = 'lightyellow';
+        }
+        
+        function handleChange(element) {
+            alert('Selected value: ' + element.value);
+        }
+
+        function handleKeyPress(event) {
+            console.log('Key pressed: ' + event.key);
+        }
+
+        function handleMouseOver(element) {
+            element.style.backgroundColor = 'coral';
+            element.textContent = 'Mouse Over Me!';
+        }
+
+        function handleMouseOut(element) {
+            element.style.backgroundColor = 'lightgray';
+            element.textContent = 'Mouse Out!';
+        }
+    </script>
+</head>
+<body onload="pageLoaded()">
+    <h1>Event Handlers in JavaScript</h1>
+    
+    <!-- onchange -->
+    <p>Select your favorite Subject:</p>
+    <select onchange="handleChange(this)">
+        <option value="">Choose a Subject</option>
+        <option value="ISMS">ISMS</option>
+        <option value="Web">Web Technology</option>
+        <option value="Cloud">Cloud Computing</option>
+    </select>
+    
+    <!-- onmouseover and onmouseout -->
+    <div id="mouseArea"
+         onmouseover="handleMouseOver(this)"
+         onmouseout="handleMouseOut(this)">
+        Mouse Over Me!
+    </div>
+    
+    <!-- onkeypress -->
+    <p>Type something (console will show the key pressed):</p>
+    <input type="text" onkeypress="handleKeyPress(event)">
+    
+    <!-- onfocus -->
+    <p>Click inside the text box:</p>
+    <input type="text" onfocus="handleFocus(this)" placeholder="Click to focus...">
+</body>
+</html>

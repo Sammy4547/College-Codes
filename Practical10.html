@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker Dropdown</title>
+</head>
+<body>
+    <h1>Select a Color</h1>
+    <select id="colorPicker" onchange="changeBackgroundColor(this.value)">
+        <!-- Options will be added here by JavaScript -->
+    </select>
+
+    <script>
+        // Array of color options
+        const colors = ['Red', 'Blue', 'Green', 'Yellow', 'Pink', 'Purple', 'Orange'];
+
+        // Function to fill the dropdown with colors
+        function populateColors() {
+            const colorPicker = document.getElementById('colorPicker');
+            colors.forEach(color => {
+                let option = new Option(color, color);
+                colorPicker.options.add(option);
+            });
+        }
+
+        // Function to change the background color of the page
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        // Call the populateColors function on window load
+        window.onload = populateColors;
+    </script>
+</body>
+</html>

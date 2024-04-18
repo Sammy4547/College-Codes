@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Font Size</title>
+    <style>
+        #displayText {
+            color: blue;  /* Set the text color to blue */
+            font-size: 10px; /* Initial font size */
+        }
+    </style>
+</head>
+<body>
+    <div id="displayText">Silver Oak University</div>
+    
+    <script>
+        let currentFontSize = 10;  // Start font size at 10px
+        const maxFontSize = 50;    // Maximum font size
+        const intervalId = setInterval(() => {
+            if (currentFontSize >= maxFontSize) {
+                clearInterval(intervalId);  // Stop the interval
+            } else {
+                currentFontSize++;  // Increase the font size
+                document.getElementById('displayText').style.fontSize = currentFontSize + 'px';
+            }
+        }, 1000);  // Increase font size every 1 second
+    </script>
+</body>
+</html>

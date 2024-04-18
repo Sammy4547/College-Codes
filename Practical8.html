@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table with 3 Columns and 50 Rows</h1>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        function generateTable() {
+            var tbody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+
+            for (var i = 1; i <= 50; i++) {
+                var row = document.createElement('tr');
+                for (var j = 1; j <= 3; j++) {
+                    var cell = document.createElement('td');
+                    cell.textContent = 'Row ' + i + ', Column ' + j;
+                    row.appendChild(cell);
+                }
+                tbody.appendChild(row);
+            }
+        }
+
+        // Call the function to generate the table on page load
+        window.onload = generateTable;
+    </script>
+</body>
+</html>
